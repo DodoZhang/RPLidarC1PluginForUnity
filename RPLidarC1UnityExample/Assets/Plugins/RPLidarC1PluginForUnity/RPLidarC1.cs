@@ -72,11 +72,6 @@ public class RPLidarC1
         return true;
     }
 
-    public int Read()
-    {
-        return _Read(nativeLidar);
-    }
-
     public PolarCoordinate GetPoint(int index)
     {
         if (!isConnected) return new PolarCoordinate(0, 0);
@@ -122,9 +117,6 @@ public class RPLidarC1
     
     [DllImport("RPLidarC1NativePlugin", EntryPoint = "stop")]
     private static extern bool _Stop(IntPtr lidar);
-    
-    [DllImport("RPLidarC1NativePlugin", EntryPoint = "read")]
-    private static extern int _Read(IntPtr lidar);
     
     [DllImport("RPLidarC1NativePlugin", EntryPoint = "head")]
     private static extern int _Head(IntPtr lidar);

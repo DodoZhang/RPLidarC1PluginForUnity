@@ -19,8 +19,6 @@ public class RPLidarTest : MonoBehaviour
 
     private void Update()
     {
-        if (lidar.isScanning) lidar.Read();
-
         if (lidar.isConnected)
         {
             if (lidar.isScanning) stateText.text = "Scanning";
